@@ -17,5 +17,5 @@ From the [FFTW documentation](http://www.fftw.org/fftw3_doc/Real_002dto_002dReal
 * FFTW_REDFT11 computes a DCT-IV (inverse is FFTW_REDFT11)
 * FFTW_RODFT00 computes a DST-I (inverse is FFTW_RODFT00)
 * FFTW_RODFT10 computes a DST-II (inverse is FFTW_RODFT01)
-* FFTW_RODFT01 computes a DST-III (inverse is FFTW_RODFT=10)
+* FFTW_RODFT01 computes a DST-III (inverse is FFTW_RODFT10)
 * FFTW_RODFT11 computes a DST-IV (inverse is FFTW_RODFT11) 
