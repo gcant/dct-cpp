@@ -1,5 +1,5 @@
 # dct-cpp
-Discrete cosine transforms et al. in C++ (wrapper for FFTW).  Requires fftw3.
+Discrete cosine transforms et al. in C++ (wrapper for FFTW).  Requires fftw3.  Tested for `std::vector<double>`, `Eigen::VectorXd` and `Eigen::ArrayXd`.
 
 Compile the example with
 ```
