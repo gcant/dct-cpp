@@ -53,6 +53,7 @@ namespace r2r {
       input = (double*) fftw_malloc(sizeof(double) * N);
       double* output;
       output = (double*) fftw_malloc(sizeof(double) * N);
+      #pragma omp atomic write
       plans[N] = fftw_plan_r2r_1d(N, input, output, kind, FFTW_MEASURE);
       fftw_free(input);
       fftw_free(output);
