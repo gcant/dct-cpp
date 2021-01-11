@@ -49,14 +49,17 @@ namespace r2r {
   
   void r2r::initialize_plan(int N) {
     if (!(plans.count(N))) {
+      #pragma omp critical
+      if (!(plans.count(N))) {
       double* input;
       input = (double*) fftw_malloc(sizeof(double) * N);
       double* output;
       output = (double*) fftw_malloc(sizeof(double) * N);
-      #pragma omp atomic write
       plans[N] = fftw_plan_r2r_1d(N, input, output, kind, FFTW_MEASURE);
       fftw_free(input);
       fftw_free(output);
+      //std::cerr << "FFTW planning for size: " << N << std::endl;
+      }
     }
   }
   
