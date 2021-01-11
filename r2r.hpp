@@ -12,6 +12,7 @@
 #include <fftw3.h>
 #include <unordered_map>
 #include <cstring>
+#include <iterator>
 
 // define inverse kinds
 const fftw_r2r_kind INV_FFTW_R2HC     =  FFTW_HC2R;
@@ -68,9 +69,9 @@ namespace r2r {
     input = (double*) fftw_malloc(sizeof(double) * N);
     double* output;
     output = (double*) fftw_malloc(sizeof(double) * N);
-    memcpy(input, X.data(), sizeof(double) * N);
+    memcpy(input, &X[0], sizeof(double) * N);
     fftw_execute_r2r(plans[N], input, output);
-    memcpy(ans.data(), output, sizeof(double) * N);
+    memcpy(&ans[0], output, sizeof(double) * N);
     fftw_free(input);
     fftw_free(output);
   }
