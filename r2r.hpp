@@ -12,7 +12,6 @@
 #include <fftw3.h>
 #include <unordered_map>
 #include <cstring>
-#include <iterator>
 
 // define inverse kinds
 const fftw_r2r_kind INV_FFTW_R2HC     =  FFTW_HC2R;
